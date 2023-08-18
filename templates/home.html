@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-left">
+      Swagata Banerjee
+    </div>
+    <div class="header-center">
+      Algerian Forest Fire
+    </div>
+    <div class="header-right">
+      <a href="https://github.com/swagatabanerjee1904" target="_blank">
+        <img src="static/images/Github-logo.png" alt="GitHub" width="30" height="30">
+      </a>
+      <a href="https://www.kaggle.com/swagatabanerjee19" target="_blank">
+        <img src="static/images/kaggle-logo.png" alt="Kaggle" width="30" height="30">
+      </a>
+    </div>
+  </div>
+
+  <div class="login">
+   <title>FWI Prediction</title>
+    <form action="{{ url_for('predict_datapoint')}}" method="post">
+      <table class="form-table">
+        <tr>
+          <th><label for="Temperature">Temperature</label></th>
+          <td><input type="text" id="Temperature" name="Temperature" required></td>
+        </tr>
+        <tr>
+          <th><label for="RH">RH</label></th>
+          <td><input type="text" id="RH" name="RH" required></td>
+        </tr>
+        <tr>
+          <th><label for="Ws">Ws</label></th>
+          <td><input type="text" id="Ws" name="Ws" required></td>
+        </tr>
+        <tr>
+          <th><label for="Rain">Rain</label></th>
+          <td><input type="text" id="Rain" name="Rain" required></td>
+        </tr>
+        <tr>
+          <th><label for="FFMC">FFMC</label></th>
+          <td><input type="text" id="FFMC" name="FFMC" required></td>
+        </tr>
+        <tr>
+          <th><label for="DMC">DMC</label></th>
+          <td><input type="text" id="DMC" name="DMC" required></td>
+        </tr>
+        <tr>
+          <th><label for="ISI">ISI</label></th>
+          <td><input type="text" id="ISI" name="ISI" required></td>
+        </tr>
+        <tr>
+          <th><label for="Classes">Classes</label></th>
+          <td><input type="text" id="Classes" name="Classes" required></td>
+        </tr>
+        <tr>
+          <th><label for="Region">Region</label></th>
+          <td><input type="text" id="Region" name="Region" required></td>
+        </tr>
+        <tr>
+          <th><label for="result">FWI Prediction</label></th>
+          <td><input type="text" id="result" name="result" readonly value="{{result}}"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button type="submit">Predict</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</body>
+</html>
